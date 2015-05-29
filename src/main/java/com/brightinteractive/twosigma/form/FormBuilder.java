@@ -27,9 +27,9 @@ public class FormBuilder {
     return this;
   }
 
-  public FormBuilder addButton(String name, String label) {
+  public FormBuilder addButton(String name, String label, Runnable behaviour) {
     List<FormElement> row = elements.get(rowIndex);
-    row.add(new Button(name, label));
+    row.add(new Button(name, label, behaviour));
     return this;
   }
 

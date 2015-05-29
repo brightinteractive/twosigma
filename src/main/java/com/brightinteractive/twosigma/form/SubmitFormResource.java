@@ -6,6 +6,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
 import com.brightinteractive.twosigma.form.FormData.FormField;
+import com.brightinteractive.twosigma.model.FormStore;
+
+import java.util.List;
 
 @Path("/submitform")
 public class SubmitFormResource {
@@ -16,6 +19,17 @@ public class SubmitFormResource {
     System.out.println("Button pressed: " + data.getButtonPressed());
     for (FormField field : data.getFields()) {
       printField(field);
+    }
+    
+    Form form = FormStore.getForm();
+    for (List<FormElement> elementRow : form.getElements()) {
+      for (FormElement element : elementRow) {
+        if (element != null &&
+            element.getName() != null &&
+            element.getName().equals(data.getButtonPressed())) {
+          element.execute();
+        }
+      }
     }
   }
 

@@ -19,4 +19,14 @@ public class Text implements FormElement {
   public String getType() {
     return "Text";
   }
+
+  @Override
+  public void execute() {
+    // only Buttons can have behaviour at the moment
+  }
+
+  @Override
+  public String getName() {
+    return null;
+  }
 }

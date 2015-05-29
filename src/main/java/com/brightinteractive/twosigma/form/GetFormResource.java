@@ -1,5 +1,7 @@
 package com.brightinteractive.twosigma.form;
 
+import com.brightinteractive.twosigma.model.FormStore;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -11,28 +13,6 @@ public class GetFormResource {
 
     @GET
     public Form getForm() {
-//      Form form = defaultForm();
-      Form form = testForm();
-      return form;
-    }
-
-    private Form testForm() {
-      return new FormBuilder()
-        .addText("What is your name?")
-        .addInputText("name")
-        .nextRow()
-        .addEmpty()
-        .addButton("pressMe", "Press me!")
-        .build();
-    }
-
-    private Form defaultForm() {
-      return new FormBuilder()
-        .addText("First Name:")
-        .addInputText("firstName")
-        .addText("Last Name:")
-        .addInputText("lastName")
-        .addButton("submit", "Submit")
-        .build();
+      return FormStore.getForm();
     }
 }

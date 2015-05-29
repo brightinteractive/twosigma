@@ -20,4 +20,8 @@ public class InputText implements FormElement {
     return "InputText";
   }
 
+  @Override
+  public void execute() {
+    // only Buttons can have behaviour at the moment
+  }
 }
