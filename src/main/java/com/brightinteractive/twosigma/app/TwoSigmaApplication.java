@@ -6,6 +6,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
 import com.brightinteractive.twosigma.form.GetFormResource;
+import com.brightinteractive.twosigma.form.SubmitFormResource;
 
 public class TwoSigmaApplication extends Application<TwoSigmaConfiguration> {
 
@@ -26,7 +27,9 @@ public class TwoSigmaApplication extends Application<TwoSigmaConfiguration> {
   @Override
   public void run(TwoSigmaConfiguration configuration, Environment environment) {
     final GetFormResource getForm = new GetFormResource();
+    final SubmitFormResource submitForm = new SubmitFormResource();
     environment.jersey().register(getForm);
+    environment.jersey().register(submitForm);
   }
 
 }
