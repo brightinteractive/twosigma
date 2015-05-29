@@ -4,24 +4,25 @@
         <meta charset="utf-8">
         <title>Form Demo</title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="js/app.js"></script>
     </head>
     <body>
+        <div class="container">
+            <h1>Form Demo</h1>
 
-        <h1>Form Demo</h1>
-
-		<form id="id_form"
-			  ng-controller="FormController as form">
-			<table>
-				<tr ng-repeat="elementRow in form.elements">
-					<td ng-repeat="element in elementRow">
-						<form-element element="element"></form-element>
-					</td>
-				</tr>
-			</table>
-		</form>
-
+            <form id="id_form"
+                  ng-controller="FormController as form">
+         
+                    <div class="form-group" ng-repeat="elementRow in form.elements"> 
+                        <div ng-repeat="element in elementRow">
+                            <form-element element="element"></form-element>
+                        </div>
+                    </div>
+              
+            </form>
+        </div>
     </body>
 </html>
