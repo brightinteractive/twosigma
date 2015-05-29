@@ -30,6 +30,7 @@ public class TwoSigmaApplication extends Application<TwoSigmaConfiguration> {
     final SubmitFormResource submitForm = new SubmitFormResource();
     environment.jersey().register(getForm);
     environment.jersey().register(submitForm);
+    environment.healthChecks().register("basic", new BasicHealthCheck());
   }
 
 }
