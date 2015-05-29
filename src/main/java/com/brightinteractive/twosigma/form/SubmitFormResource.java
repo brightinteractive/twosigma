@@ -16,6 +16,6 @@ public class SubmitFormResource {
 
     @GET
     @Timed
-    public void submitForm(Form form) {
+    public void submitForm(FormBuilder form) {
     }
 }

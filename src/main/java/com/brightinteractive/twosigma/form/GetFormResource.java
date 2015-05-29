@@ -11,7 +11,28 @@ public class GetFormResource {
 
     @GET
     public Form getForm() {
-      Form defaultForm = new Form();
-      return defaultForm;
+//      Form form = defaultForm();
+      Form form = testForm();
+      return form;
+    }
+
+    private Form testForm() {
+      return new FormBuilder()
+        .addText("What is your name?")
+        .addInputText("name")
+        .nextRow()
+        .addEmpty()
+        .addButton("pressMe", "Press me!")
+        .build();
+    }
+
+    private Form defaultForm() {
+      return new FormBuilder()
+        .addText("First Name:")
+        .addInputText("firstName")
+        .addText("Last Name:")
+        .addInputText("lastName")
+        .addButton("submit", "Submit")
+        .build();
     }
 }
