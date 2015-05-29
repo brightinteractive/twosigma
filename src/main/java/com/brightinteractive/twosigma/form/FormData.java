@@ -22,13 +22,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  */
 public class FormData {
-
+  private String buttonPressed;
   private List<FormField> fields;
   
   public FormData() {
   }
 
   public FormData(List<FormField> fields) {
+    this.fields = fields;
+  }
+
+  @JsonProperty
+  public String getButtonPressed() {
+    return buttonPressed;
+  }
+
+  public void setButtonPressed(String buttonPressed) {
+    this.buttonPressed = buttonPressed;
+  }
+
+  public void setFields(List<FormField> fields) {
     this.fields = fields;
   }
 

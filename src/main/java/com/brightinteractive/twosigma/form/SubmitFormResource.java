@@ -13,6 +13,7 @@ public class SubmitFormResource {
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
   public void submitForm(FormData data) {
+    System.out.println("Button pressed: " + data.getButtonPressed());
     for (FormField field : data.getFields()) {
       printField(field);
     }

@@ -65,7 +65,7 @@
             }
 
             var formSubmission = {
-//                buttonPressed: buttonName,
+                buttonPressed: buttonName,
                 fields: fields
             }
 
