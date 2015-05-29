@@ -16,3 +16,7 @@ hs_err_pid*
 .project
 .classpath
 .settings
+
+# JavaScript build output
+bower_components
+node_modules
