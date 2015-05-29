@@ -17,6 +17,13 @@ hs_err_pid*
 .classpath
 .settings
 
+# Temp files
+*~
+
 # JavaScript build output
 bower_components
 node_modules
+
+# Dropwizard files
+dependency-reduced-pom.xml
+
