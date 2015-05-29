@@ -10,11 +10,11 @@
         // time is short!
         for (var i = 0; i < this.elements.length; i++) {
             var elementRow = this.elements[i];
-            for (var i = 0; i < elementRow.length; i++) {
-                var element = elementRow[i];
+            for (var j = 0; j < elementRow.length; j++) {
+                var element = elementRow[j];
                 if (element) {
                     if (element.type == 'InputText') {
-                        elementRow[i] = {
+                        elementRow[j] = {
                             type: element.type,
                             name: element.name,
                             value: function(newValue) {
@@ -28,19 +28,19 @@
                             }
                         }
                     } else if (element.type == 'Button') {
-                        elementRow[i] = {
+                        elementRow[j] = {
                             type: element.type,
                             name: element.name,
-                            label: element.label
-                            //TODO on click function to tell form which button was pressed
+                            label: element.label,
+                            onClick: function() {
+                                alert(this.name + ' clicked, data to submit: ' +
+                                      form.data.name);
+                                form.data = initialData();
+                            }
+                        };
                     }
                 }
             }
-        }
-
-        this.submit = function() {
-            alert('data to submit: ' + this.data.name);
-            this.data = initialData()
         }
     });
 
@@ -98,6 +98,14 @@
                 'type': 'Button',
                 'name': 'pressMe',
                 'label': 'Press me!'
+            }
+        ],
+        [
+            null,
+            {
+                'type': 'Button',
+                'name': 'dontPressMe',
+                'label': "Don't press me!"
             }
         ]
     ];

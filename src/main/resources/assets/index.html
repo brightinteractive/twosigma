@@ -11,8 +11,8 @@
 
         <h1>Form Demo</h1>
 
-		<form ng-controller="FormController as form"
-			  ng-submit="form.submit()">
+		<form id="id_form"
+			  ng-controller="FormController as form">
 			<table>
 				<tr ng-repeat="elementRow in form.elements">
 					<td ng-repeat="element in elementRow">
