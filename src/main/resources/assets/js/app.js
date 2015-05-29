@@ -12,19 +12,27 @@
             var elementRow = this.elements[i];
             for (var i = 0; i < elementRow.length; i++) {
                 var element = elementRow[i];
-                if (element && element.type == 'InputText') {
-                    elementRow[i] = {
-                        type: element.type,
-                        name: element.name,
-                        value: function(newValue) {
-                            if (arguments.length) {
-                                // set
-                                return (form.data[this.name] = newValue);
-                            } else {
-                                // get
-                                return form.data[this.name];
+                if (element) {
+                    if (element.type == 'InputText') {
+                        elementRow[i] = {
+                            type: element.type,
+                            name: element.name,
+                            value: function(newValue) {
+                                if (arguments.length) {
+                                    // set
+                                    return (form.data[this.name] = newValue);
+                                } else {
+                                    // get
+                                    return form.data[this.name];
+                                }
                             }
                         }
+                    } else if (element.type == 'Button') {
+                        elementRow[i] = {
+                            type: element.type,
+                            name: element.name,
+                            label: element.label
+                            //TODO on click function to tell form which button was pressed
                     }
                 }
             }
