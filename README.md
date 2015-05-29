@@ -1,10 +1,28 @@
 Form Demo
 =========
 
-Built for Two Sigma
+Copyright Bright Interactive 2015.
 
-Build with 'mvn clean package'
-Run with 'java -jar target/twosigma-0.0.1-SNAPSHOT.jar server  form-demo.yml'
+Built for Two Sigma.
+
+Prerequisites
+-------------
+
+* Maven 3
+* Java 1.8
+* NodeJS 0.10.x
+* POSIX-like OS (developed on Linux and Mac OS X).
+
+Building and running
+--------------------
+
+Execute the following commands to build and run the application:
+
+    npm install
+    mvn clean package
+    java -jar target/twosigma-0.0.1-SNAPSHOT.jar server form-demo.yml
+
+The above will launch a web server listening on port 8080, you can then open http://localhost:8080/ in a browser.
 
 Spec
 ----
@@ -30,4 +48,4 @@ Client side:
 Assumptions
 ----------- 
 
-* The behaviour attached to the button is executed server side. 
+* The behaviour attached to the button should be executed server side (not client side). 

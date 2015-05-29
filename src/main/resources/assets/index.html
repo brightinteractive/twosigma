@@ -1,8 +1,29 @@
-<html>
-	<head>
-		<title>Form Demo</title>
-	</head>
-	<body>
-		<div>Hello World!</div>
-	</body>
+<!doctype html>
+<html lang="en" ng-app="formDemo">
+    <head>
+        <meta charset="utf-8">
+        <title>Form Demo</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+
+        <h1>Form Demo</h1>
+
+        <table ng-controller="FormController as form">
+            <tr ng-repeat="elementRow in form.elements">
+                <td ng-repeat="element in elementRow">
+
+                    <text-element ng-show="element.type == 'Text'" element="element"></text-element>
+
+                    <input-text-element ng-show="element.type == 'InputText'" element="element"></input-text-element>
+
+                    <button-element ng-show="element.type == 'Button'" element="element"></button-element>
+
+                </td>
+            </tr>
+        </table>
+
+    </body>
 </html>
