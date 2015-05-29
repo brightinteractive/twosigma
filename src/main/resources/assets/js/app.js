@@ -2,7 +2,8 @@
     var app = angular.module('formDemo', []);
     app.controller('FormController', function($scope) {
         var form = this;
-        this.data = initialData();
+        this.data = {};
+        this.submitMessage = '';
 
         $.ajax({
             url: '/api/getform',
@@ -38,9 +39,7 @@
                                     name: element.name,
                                     label: element.label,
                                     onClick: function() {
-                                        alert(this.name + ' clicked, data to submit: ' +
-                                              form.data.name);
-                                        form.data = initialData();
+                                        form.submit(this.name);
                                     }
                                 };
                             }
@@ -51,6 +50,41 @@
                 $scope.$apply();
             }
         });
+
+        this.submit = function(buttonName) {
+            var fields = [];
+            for (var name in this.data) {
+                if (this.data.hasOwnProperty(name)) {
+                    var value = this.data[name];
+                    field = {
+                        name: name,
+                        value: value
+                    };
+                    fields.push(field);
+                }
+            }
+
+            var formSubmission = {
+                buttonPressed: buttonName,
+                fields: fields
+            }
+
+            console.log('About to post ' + formSubmission);
+            $.ajax({
+                url: '/api/submitform',
+                method: 'POST',
+                data: JSON.stringify(formSubmission),
+                contentType: 'application/json',
+                success: function() {
+                    form.submitMessage = 'Submitted successfully to server';
+                    $scope.$apply();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    form.submitMessage = 'Error submitting to server: ' + textStatus + ': ' + errorThrown;
+                    $scope.$apply();
+                }
+            });
+        }
     });
 
     app.directive('formElement', function() {
@@ -84,8 +118,4 @@
             templateUrl: 'directives/elements/button.html'
         };
     });
-
-    var initialData = function() {
-        return {name: 'Francis'};
-    };
 })();

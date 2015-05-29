@@ -7,4 +7,7 @@ public interface FormElement {
   @JsonProperty
   String getType();
 
+  String getName();
+
+  void execute();
 }

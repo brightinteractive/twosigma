@@ -11,18 +11,20 @@
     </head>
     <body>
         <div class="container">
+      
             <h1>Form Demo</h1>
 
-            <form id="id_form"
-                  ng-controller="FormController as form">
-         
-                    <div class="form-group" ng-repeat="elementRow in form.elements"> 
-                        <div ng-repeat="element in elementRow">
-                            <form-element element="element"></form-element>
-                        </div>
-                    </div>
-              
-            </form>
+    		<form id="id_form"
+    			  ng-controller="FormController as form">
+    			<div ng-repeat="elementRow in form.elements">
+    				<div ng-repeat="element in elementRow">
+    					<form-element element="element"></form-element>
+    				</div>
+    	
+    		  </div>
+
+    			<p>{{ form.submitMessage }}</p>
+    		</form>
         </div>
     </body>
 </html>

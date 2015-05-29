@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Form implements FormElement {
+public class Form {
   
   @JsonProperty
   private List<List<FormElement>> elements;
@@ -13,9 +13,7 @@ public class Form implements FormElement {
     this.elements = elements;
   }
 
-  @Override
-  public String getType() {
-    return "Form";
+  public List<List<FormElement>> getElements() {
+    return elements;
   }
-
 }
