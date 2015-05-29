@@ -2,7 +2,7 @@
     var app = angular.module('formDemo', []);
     app.controller('FormController', function($scope) {
         var form = this;
-        this.data = initialData();
+        this.data = {};
 
         $.ajax({
             url: '/api/getform',
@@ -40,7 +40,6 @@
                                     onClick: function() {
                                         alert(this.name + ' clicked, data to submit: ' +
                                               form.data.name);
-                                        form.data = initialData();
                                     }
                                 };
                             }
@@ -84,8 +83,4 @@
             templateUrl: 'directives/elements/button.html'
         };
     });
-
-    var initialData = function() {
-        return {name: 'Francis'};
-    };
 })();
