@@ -20,7 +20,7 @@ Execute the following commands to build and run the application:
 
     npm install
     mvn clean package
-    java -jar target/twosigma-0.0.1-SNAPSHOT.jar server form-demo.yml
+    java -jar target/formdemo-0.0.1-SNAPSHOT.jar server form-demo.yml
 
 The above will launch a web server listening on port 8080, you can then open http://localhost:8080/ in a browser.
 
