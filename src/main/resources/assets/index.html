@@ -11,13 +11,16 @@
 
         <h1>Form Demo</h1>
 
-        <table ng-controller="FormController as form">
-            <tr ng-repeat="elementRow in form.elements">
-                <td ng-repeat="element in elementRow">
-					<form-element element="element"></form-element>
-                </td>
-            </tr>
-        </table>
+		<form ng-controller="FormController as form"
+			  ng-submit="form.submit()">
+			<table>
+				<tr ng-repeat="elementRow in form.elements">
+					<td ng-repeat="element in elementRow">
+						<form-element element="element"></form-element>
+					</td>
+				</tr>
+			</table>
+		</form>
 
     </body>
 </html>
