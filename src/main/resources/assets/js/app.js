@@ -4,6 +4,14 @@
         this.elements = elements;
     });
 
+    app.directive('formElement', function() {
+        return {
+            restrict: 'E',
+            scope: {element: '='},
+            templateUrl: 'directives/elements/any.html'
+        };
+    });
+
     app.directive('textElement', function() {
         return {
             restrict: 'E',

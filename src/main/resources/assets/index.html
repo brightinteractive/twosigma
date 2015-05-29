@@ -14,13 +14,7 @@
         <table ng-controller="FormController as form">
             <tr ng-repeat="elementRow in form.elements">
                 <td ng-repeat="element in elementRow">
-
-                    <text-element ng-show="element.type == 'Text'" element="element"></text-element>
-
-                    <input-text-element ng-show="element.type == 'InputText'" element="element"></input-text-element>
-
-                    <button-element ng-show="element.type == 'Button'" element="element"></button-element>
-
+					<form-element element="element"></form-element>
                 </td>
             </tr>
         </table>
