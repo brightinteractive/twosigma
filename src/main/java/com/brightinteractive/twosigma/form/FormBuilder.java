@@ -15,12 +15,6 @@ public class FormBuilder {
     rowIndex = 0;
   }
 
-  public FormBuilder addElement(FormElement formElement) {
-    List<FormElement> row = elements.get(rowIndex);
-    row.add(formElement);
-    return this;
-  }
-
   public FormBuilder addText(String content) {
     List<FormElement> row = elements.get(rowIndex);
     row.add(new Text(content));
