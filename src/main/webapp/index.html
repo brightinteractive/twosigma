@@ -11,11 +11,17 @@
 
         <h1>Form Demo</h1>
 
-        <ul ng-controller="FormController as form">
-            <li ng-repeat="element in form.elements">
-                {{ element.name }}
-            </li>
-        </ul>
+        <span ng-controller="FormController as form">
+            <span ng-repeat="element in form.elements">
+
+                <span ng-show="element.type == 'Text'">{{ element.label }}</span>
+
+                <input ng-show="element.type == 'InputText'" name="{{ element.name }}"/>
+
+                <button ng-show="element.type == 'Button'" name="{{ element.name }}">{{ element.label }}</button>
+
+            </span>
+        </span>
 
     </body>
 </html>

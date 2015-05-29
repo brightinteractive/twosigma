@@ -4,12 +4,20 @@
         this.elements = elements;
     });
 
+    // some hard-coded data in the format we expect it to be returned from the server
     var elements = [
         {
-            "name": "First"
+            "type": "Text",
+            "label": "What is your name?",
         },
         {
-            "name": "Second"
+            "type": "InputText",
+            "name": "name",
+        },
+        {
+            "type": "Button",
+            "name": "pressMe",
+            "label": "Press me!"
         }
     ];
 })();
