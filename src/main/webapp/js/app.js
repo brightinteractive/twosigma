@@ -6,18 +6,23 @@
 
     // some hard-coded data in the format we expect it to be returned from the server
     var elements = [
-        {
-            "type": "Text",
-            "label": "What is your name?",
-        },
-        {
-            "type": "InputText",
-            "name": "name",
-        },
-        {
-            "type": "Button",
-            "name": "pressMe",
-            "label": "Press me!"
-        }
+        [
+            {
+                "type": "Text",
+                "label": "What is your name?",
+            },
+            {
+                "type": "InputText",
+                "name": "name",
+            }
+        ],
+        [
+            null,
+            {
+                "type": "Button",
+                "name": "pressMe",
+                "label": "Press me!"
+            }
+        ]
     ];
 })();
