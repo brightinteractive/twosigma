@@ -15,11 +15,11 @@
             <tr ng-repeat="elementRow in form.elements">
                 <td ng-repeat="element in elementRow">
 
-                    <span ng-show="element.type == 'Text'">{{ element.label }}</span>
+                    <text-element ng-show="element.type == 'Text'" element="element"></text-element>
 
-                    <input ng-show="element.type == 'InputText'" name="{{ element.name }}"/>
+                    <input-text-element ng-show="element.type == 'InputText'" element="element"></input-text-element>
 
-                    <button ng-show="element.type == 'Button'" name="{{ element.name }}">{{ element.label }}</button>
+                    <button-element ng-show="element.type == 'Button'" element="element"></button-element>
 
                 </td>
             </tr>
